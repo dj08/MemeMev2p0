@@ -44,8 +44,6 @@ class SentMemeCollectionViewController: UICollectionViewController {
             label.textAlignment = .center
             label.text = "No Memes Stored!\nClick '+' to create a new Meme."
             collectionView!.backgroundView = label
-        } else {
-            collectionView!.backgroundView = nil
         }
     }
     
