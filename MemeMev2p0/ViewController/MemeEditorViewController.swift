@@ -37,6 +37,9 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
                  bottomText: bottomLabel.text!,
                  originalImage: imagePickerView.image!,
                  memedImage: memedImage)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(self.memeObject)
+        dismiss(animated: true, completion: nil)
     }
     
     func hideToolbar (hide: Bool) {
@@ -181,6 +184,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         imagePickerView.image = nil
         topLabel.text = "TOP"
         bottomLabel.text = "BOTTOM"
+        dismiss(animated: true, completion: nil)
     }
 }
 
