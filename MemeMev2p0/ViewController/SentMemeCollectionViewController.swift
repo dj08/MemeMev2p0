@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-private let reuseIdentifier = "CollectionViewCell"
-
 class SentMemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
@@ -66,7 +64,8 @@ class SentMemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SentMemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionViewCell",
+                                                      for: indexPath) as! SentMemeCollectionViewCell
         let meme: Meme = appDelegate.memes[indexPath.row]
         cell.cellImageView!.image = meme.memedImage
         return cell
